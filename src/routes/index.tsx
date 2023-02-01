@@ -6,7 +6,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { theme } from "../global/global";
 import { Categories } from "../pages/Categories";
-import { Home } from "../pages/Home";
+import { Home } from "../pages/Home/Home";
 
 const Tab = createBottomTabNavigator();
 

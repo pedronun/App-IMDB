@@ -1,7 +1,7 @@
-import { Image, ButtonText, Container } from "./Button.styles";
 import { LinearGradient } from "expo-linear-gradient";
+import { TouchableOpacity } from "react-native";
 import { theme } from "../../global/global";
-import { View, TouchableOpacity } from "react-native";
+import { ButtonText, Container, Image } from "./Button.styles";
 
 interface ButtonProps {
   title: string;
