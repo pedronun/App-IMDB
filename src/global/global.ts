@@ -14,8 +14,8 @@ export const theme = {
     highlight: '#FFFFFF',
 
     bottomBarColor: '#292929',
-    star: '#E7C825',
 
+    red: '#CA1636',
     green: '#19A1BE',
     purple: '#7D4192',
   },

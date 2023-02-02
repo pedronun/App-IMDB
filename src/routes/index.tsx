@@ -7,6 +7,7 @@ import { View, Text } from "react-native";
 import { theme } from "../global/global";
 import { Categories } from "../pages/Categories";
 import { Home } from "../pages/Home/Home";
+import { Movie } from "../pages/Movie/Movie";
 
 const Tab = createBottomTabNavigator();
 
@@ -64,6 +65,14 @@ export function Routes() {
                   <Text style={{color: theme.colors.secondary40, fontSize: 12, top: 5}}>Categories</Text>
                 </View>
               ),
+          }} 
+        />
+        <Tab.Screen 
+          name="Movie" 
+          component={Movie} 
+          options={{
+            tabBarButton: () => null,
+            tabBarVisible:false
           }} 
         />
       </Tab.Navigator>

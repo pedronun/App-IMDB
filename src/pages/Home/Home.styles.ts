@@ -7,7 +7,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Content = styled.View`
-  padding: 39px 20px;
+  padding: 39px 20px 120px;
 `;
 
 export const User = styled.View`
