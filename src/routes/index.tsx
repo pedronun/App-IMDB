@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { View, Text } from "react-native";
 import { theme } from "../global/global";
-import { Categories } from "../pages/Categories";
+import { Categories } from "../pages/Categories/Categories";
 import { Home } from "../pages/Home/Home";
 import { Movie } from "../pages/Movie/Movie";
 
