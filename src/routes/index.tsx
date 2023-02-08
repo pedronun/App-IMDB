@@ -72,7 +72,6 @@ export function Routes() {
           component={Movie} 
           options={{
             tabBarButton: () => null,
-            tabBarVisible:false
           }} 
         />
       </Tab.Navigator>
