@@ -18,16 +18,16 @@ import {
   MovieIcon,
   AnimeIcon,
   SubTitle,
+  MovieResult,
 } from "./Categories.styles";
 import { View, ImageBackground, FlatList, Text } from "react-native";
 import { MovieShelf } from "../../components/MovieContent/MovieShelf";
 
 export function Categories() {
   const [search, setSearch] = useState<string>("");
+  const [result, setResult] = useState<any>([]);
   const queryClient = useQueryClient();
   const moviesRecommendation: any = queryClient.getQueryData("recommendations");
-
-  let result: any;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,15 +35,17 @@ export function Categories() {
         `/SearchTitle/${API_KEY}/${search}`
       );
 
-      result = data.results;
+      setResult(data.results);
     };
 
     fetchData();
   }, [search]);
 
   const handleSubCategory = useCallback(() => {
-    result = moviesRecommendation;
+    setResult(moviesRecommendation);
   }, []);
+
+  const isValid = result !== undefined && result.length;
 
   return (
     <Container>
@@ -71,7 +73,16 @@ export function Categories() {
             />
           </LinearGradient>
         </View>
-        {result !== undefined && result.length ? <Text>Result</Text> : (
+        {isValid ? (
+          <>
+            <SubTitle style={{ marginTop: 32 }}>Results.</SubTitle>
+            <MovieResult>
+              {result.map((item: any) => (
+                <MovieShelf key={item.id} item={item} style={{marginBottom: 16, marginHorizontal: 16}} />
+              ))}
+            </MovieResult>
+          </>
+        ) : (
           <>
             <SubCategories>
               <SubTitle>Categories.</SubTitle>
@@ -126,11 +137,30 @@ export function Categories() {
                 </SubCategory>
               </SubCategoriesButton>
             </SubCategories>
-            <SubTitle>Most searched.</SubTitle>
+            <SubTitle style={{ marginTop: 29, marginBottom: 16 }}>
+              Most searched.
+            </SubTitle>
             <FlatList
               horizontal
               keyExtractor={(item) => item.id}
-              contentContainerStyle={{ alignSelf: "flex-start" }}
+              contentContainerStyle={{
+                alignSelf: "flex-start",
+                marginHorizontal: 24,
+              }}
+              ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+              showsVerticalScrollIndicator={false}
+              showsHorizontalScrollIndicator={false}
+              data={moviesRecommendation}
+              renderItem={({ item }) => <MovieShelf item={item} />}
+            />
+            <FlatList
+              horizontal
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={{
+                alignSelf: "flex-start",
+                marginHorizontal: 24,
+                marginBottom: 120,
+              }}
               ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
               showsVerticalScrollIndicator={false}
               showsHorizontalScrollIndicator={false}

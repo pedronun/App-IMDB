@@ -1,5 +1,5 @@
 import { Container, Title, Year } from "./MovieShelf.styles";
-import { Image } from "react-native";
+import { Image, StyleProp, TextStyle } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 interface IMovieShelfProps {
@@ -9,9 +9,10 @@ interface IMovieShelfProps {
     title: string;
     year: string;
   };
+  style?: StyleProp<TextStyle>;
 }
 
-export function MovieShelf({ item }: IMovieShelfProps) {
+export function MovieShelf({ item, style }: IMovieShelfProps) {
   const navigation = useNavigation();
   
   return (
@@ -22,9 +23,10 @@ export function MovieShelf({ item }: IMovieShelfProps) {
           id: item.id,
         });
       }}
+      style={style}
     >
       <Image
-        source={{ uri: item.image }}
+        source={{ uri: item.image || "https://imdb-api.com/images/original/nopicture.jpg" }}
         style={{ width: 124, height: 124, borderRadius: 24 }}
       />
       <Title>{item.title.split(":")[0]}</Title>

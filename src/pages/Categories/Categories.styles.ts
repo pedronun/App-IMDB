@@ -8,7 +8,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Content = styled.ScrollView`
-  padding: 47px 0 120px;
+  padding: 47px 0 0;
   width: 100%;
 `;
 
@@ -82,4 +82,13 @@ export const SubCategoryText = styled.Text`
   line-height: 16px;
   color: ${theme.colors.highlight};
   margin-right: 11px;
+`;
+
+export const MovieResult = styled.View`
+  margin: 16px 24px 120px;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
