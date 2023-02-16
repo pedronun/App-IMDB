@@ -26,19 +26,58 @@ export const BackButton = styled.TouchableOpacity`
 export const Title = styled.Text`
   font-family: ${theme.fonts.title700};
   font-size: 32px;
-  line-height: 53px;
+  line-height: 32px;
   color: ${theme.colors.highlight};
 `;
 
-export const MovieContent = styled.View`
+export const MovieTop = styled.View`
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px;
+`;
+
+export const Description = styled.Text`
+  margin-top: 16px;
+  font-family: ${theme.fonts.text400};
+  font-size: 14px;
+  line-height: 22px;
+  color: ${theme.colors.secondary40};
+`;
+
+export const Cast = styled.View`
+  margin-top: 24px;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 
-export const MovieTitle = styled.Text`
+export const CastItem = styled.View`
+  width: 163px;
+  height: 52px;
+  background: ${theme.colors.bottomBarColor};
+  border-radius: 16px;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+export const ActorImage = styled.Image`
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+`;
+
+export const ActorName = styled.Text`
   font-family: ${theme.fonts.title700};
-  font-size: 32px;
-  line-height: 53px;
+  font-size: 11px;
+  line-height: 20px;
+  color: ${theme.colors.highlight};
+`;
+
+export const ActorCharacter = styled.Text`
+  font-family: ${theme.fonts.text400};
+  font-size: 10px;
+  line-height: 16px;
   color: ${theme.colors.highlight};
 `;

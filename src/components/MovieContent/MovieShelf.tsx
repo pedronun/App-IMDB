@@ -1,6 +1,6 @@
-import { Container, Title, Year } from "./MovieShelf.styles";
-import { Image, StyleProp, TextStyle } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Image, StyleProp, TextStyle } from "react-native";
+import { Container, Title, Year } from "./MovieShelf.styles";
 
 interface IMovieShelfProps {
   item: {
@@ -20,7 +20,7 @@ export function MovieShelf({ item, style }: IMovieShelfProps) {
       activeOpacity={0.9}
       onPress={() => {
         navigation.navigate("Movie", {
-          id: item.id,
+          movieId: item.id,
         });
       }}
       style={style}

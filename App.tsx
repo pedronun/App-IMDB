@@ -1,17 +1,17 @@
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import React, { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { StatusBar, View } from "react-native";
 import { Welcome } from "./src/pages/Welcome/welcome";
 
-import { Routes } from "./src/routes";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Routes } from "./src/routes";
 
 SplashScreen.preventAutoHideAsync();
 const client = new QueryClient();
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const [fontsLoaded] = useFonts({
     Axiforma_700: require("./assets/fonts/Axiforma-Bold.ttf"),
