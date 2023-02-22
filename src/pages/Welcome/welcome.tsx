@@ -36,6 +36,8 @@ export function Welcome({setIsAuthenticated}: WelcomeProps) {
       <Button title={"Enter now"} onPress={() => {
         if (!hasReachedMax) {
           setIsAuthenticated(true);
+        } else {
+          alert("You have reached the maximum number of requests allowed. Please try again later.");
         }
       }} />
     </Container>
