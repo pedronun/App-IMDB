@@ -15,7 +15,7 @@ And much more!
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+IMDB APP uses a number of dependecies to work properly:
 
 - React Native
 - TypeScript
