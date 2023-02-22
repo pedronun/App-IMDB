@@ -48,5 +48,5 @@ If you want to run the app on ios simulator, run the following command:
 ```sh
 cd App-IMDB
 yarn
-yarn android
+yarn ios
 ```
